@@ -1,0 +1,22 @@
+body {
+    height: 100vh;
+}
+
+.abstract {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+}
+
+.umm {
+    position: absolute;
+    right: 50%;
+    top: 23%;
+}
+
+.Term {
+    position: absolute;
+    left: -0.5mm;
+    font-size: 8mm;
+    font-family: 'Baskerville Old Face';
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+</head>
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            {% load crispy_forms_tags %}
+            <div class="jumbotron">
+                {% load crispy_forms_tags %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">
+                            Sign In
+                        </legend>
+                        <img class="img-thumbnail" src="{% static 'img/1.png' %}"> {{ form|crispy }}
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">SIGN UP</button>
+                </form>
+
+
+            </div>
+        </div>
+        <div id="formFooter">
+            <a class="underlineHover" href="{% url 'register' %}">Doesn't Have an Account?</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
