@@ -113,12 +113,19 @@
                     <p class="lead">
                         <a class="btn btn-primary btn-lg " href="/login" role="button">login</a>
                     </p>
-                    {% endif %}
-
+                    {% endif %} {% load jsonify %}
                     <canvas id="myChart"></canvas>
 
             </main>
         </div>
     </div>
-    <script src="{% static 'js/sample.js' %}"></script>
+    <script src="{% static 'js/data.js' %}"></script>
+    <script type="text/javascript">
+        var json = JSON.parse('{{ json | safe }}');
+        console.log(json);
+        $(document).ready(function() {
+            make_chart(json);
+        });
+    </script>
+    <!-- <script src="{% static 'js/sample.js' %}"></script> -->
     {% endblock %}
