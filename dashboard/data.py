@@ -12,8 +12,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def browser():
     if(os.path.exists(BASE_DIR+"/dashboard/data/"+str(today)+".csv") != True):
-        driver = webdriver.Chrome(executable_path='C:\Program Files (x86)   \Google\Chrome\Application\chromedriver.exe')
-        driver.get('https://www.nseindia.com/live_market/dynaContent/live_watch/    equities_stock_watch.htm')
+        driver = webdriver.Chrome(executable_path=BASE_DIR+"/chromedriver_win32/chromedriver.exe")
+        driver.get('https://www.nseindia.com/live_market/dynaContent/live_watch/equities_stock_watch.htm')
         button = driver.find_element_by_class_name('download-data-link1')
         button.click()
         time.sleep(5)
