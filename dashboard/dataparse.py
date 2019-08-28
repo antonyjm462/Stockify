@@ -1,5 +1,7 @@
 import json
 import csv
+
+
 dict_list = []
 from datetime import date
 today = date.today()
@@ -17,6 +19,9 @@ def read_csv(file):
         title = reader.fieldnames
         for row in reader:
             csv_rows.extend([{title[i]:row[title[i]] for i in range(len(title))}])
+        print(csv_rows)
+        for data in csv_rows:
+            print(data['High'])
         return (json.dumps(csv_rows))
         
 def dataparse():

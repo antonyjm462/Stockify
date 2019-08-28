@@ -1,54 +1,83 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no' %}">
+    <link rel="stylesheet" href="{% static 'vendors/iconfonts/mdi/css/materialdesignicons.css' %}" />
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.addons.css' %}" />
+    <!-- endinject -->
+    <!-- vendor css for this page -->
+    <!-- End vendor css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'css/shared/style.css' %}" />
+    <!-- endinject -->
+    <!-- Layout style -->
+    <link rel="stylesheet" href="{% static 'css/demo_1/style.css' %}">
+    <!-- Layout style -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
 </head>
 
 <body>
-    <div class="view full-page-intro" style="background-image: url('https://www.google.com.np/imgres?imgurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fimg_lights.jpg&imgrefurl=https%3A%2F%2Fwww.w3schools.com%2Fw3css%2Fw3css_images.asp&docid=R0KnAtfyBDsyiM&tbnid=kwgHAQqTiLQXLM%3A&vet=10ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE..i&w=600&h=400&bih=702&biw=1366&q=image&ved=0ahUKEwj5z9nr277bAhWBbX0KHZzyAS8QMwitASgBMAE&iact=mrc&uact=8'); background-repeat: no-repeat; background-size: cover;">
-        <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-            <div class="container">
-                <div class="row wow fadeIn">
-                    <div class="col-md-6 mb-4 white-text text-center text-md-left">
-                        <h6 class="display-4">Changing Humanity</h6>
-                        <hr class="hr-light">
-                        <section>
-                            <p class="Term">
-                                <strong>Stockify Technologies </strong>
-                            </p>
-                        </section>
-                        <section>
-                            <p class="umm">The stock market refers to public markets that exist for issuing, buying and selling stocks that trade on a stock exchange or over-the-counter. Stocks, also known as equities, represent fractional ownership in a company, and
-                                the stock market is a place where investors can buy and sell ownership of such investible assets. An efficiently functioning stock market is considered critical to economic development, as it gives companies the ability
-                                to quickly access capital from the public.</p>
-                            <p class="abstract">
-                                Created in the vision towards Digital India Mission, Stockify technologies aim to provide the best service to the users. We compare the data from last Two years and through our Algorithm predicts the possible market value for tomorrow.
-                            </p>
-                        </section>
-
-                    </div>
-                    <div class="col-md-6 col-xl-5 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                {% load crispy_forms_tags %}
+    <div class="authentication-theme auth-style_1">
+        <div class="row">
+            <div class="col-12 logo-section">
+                <a href="dashboard.html" class="logo">
+                    <img src="{% static 'images/logo.svg' %}" alt="logo" />
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 col-md-7 col-sm-9 col-11 mx-auto">
+                <div class="grid">
+                    <div class="grid-body">
+                        <div class="row">
+                            {% load crispy_forms_tags %}
+                            <div class="col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper">
                                 <form method="POST">
                                     {% csrf_token %}
-                                    <fieldset class="form-group">
-                                        <legend class="border-bottom mb-4">
-                                            Sign Up Today
-                                        </legend>
+                                    <fieldset class="form-group input-rounded">
+                                        <!-- <div class="form-group input-rounded">
+                                            <input type="text" class="form-control" placeholder="Username" />
+                                        </div>
+                                        <div class="form-group input-rounded">
+                                            <input type="password" class="form-control" placeholder="Password" />
+                                        </div> -->
                                         {{ form|crispy }}
                                     </fieldset>
-                                    <button type="submit" class="btn btn-primary">SIGN UP</button>
+                                    <div class="form-inline">
+                                        <div class="checkbox">
+                                            <label>
+                          <input type="checkbox" class="form-check-input" />Remember me <i class="input-frame"></i>
+                        </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block"> Sign Up </button>
                                 </form>
-                                <div class="border-top pt-3">
-                                    <small class="text-muted"> <a href="{% url 'login'%}">Have a Account?</a> </small>
+                                <div class="signup-link">
+                                    <p>Have a Account?</p>
+                                    <a href="{% url 'login' %}">Login</a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="auth_footer">
+            <p class="text-muted text-center">© Label Inc 2019</p>
+        </div>
     </div>
-    </div>
-    {% endblock %}
+    <!--page body ends -->
+    <!-- SCRIPT LOADING START FORM HERE /////////////-->
+    <!-- plugins:js -->
+    <script src="{% static 'vendors/js/core.js' %}"></script>
+    <script src="{% static 'vendors/js/vendor.addons.js' %}"></script>
+    <!-- endinject -->
+    <!-- Vendor Js For This Page Ends-->
+    <!-- Vendor Js For This Page Ends-->
+    <!-- build:js -->
+    <!-- <script src="{% static 'js/template.js' %}"></script> -->
+    <!-- endbuild -->
+</body>
+
+{% endblock %}

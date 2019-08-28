@@ -1,48 +1,42 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'css/logout.css' %}" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no' %}">
+    <link rel="stylesheet" href="{% static 'vendors/iconfonts/mdi/css/materialdesignicons.css' %}" />
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.addons.css' %}" />
+    <!-- endinject -->
+    <!-- vendor css for this page -->
+    <!-- End vendor css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'css/shared/style.css' %}" />
+    <!-- endinject -->
+    <!-- Layout style -->
+    <link rel="stylesheet" href="{% static 'css/demo_1/style.css' %}">
+    <!-- Layout style -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
 </head>
 
 <body>
-    <header>
+    <div class="error_page error_2">
+        <div class="container inner-wrapper">
+            <h1 class="display-1 error-heading">404</h1>
+            <h2 class="error-code">Page Not Found</h2>
+            <p class="error-message">The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
+            <a href="{% url 'login'%}" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+    <!--page body ends -->
+    <!-- SCRIPT LOADING START FORM HERE /////////////-->
+    <!-- plugins:js -->
+    <script src="{% static 'vendors/js/core.js' %}"></script>
+    <script src="{% static 'vendors/js/vendor.addons.js' %}"></script>
+    <!-- endinject -->
+    <!-- Vendor Js For This Page Ends-->
+    <!-- Vendor Js For This Page Ends-->
+    <!-- build:js -->
+    <!-- <script src="{% static 'js/template.js' %}"></script> -->
+    <!-- endbuild -->
+</body>
 
-        <main role="main">
-
-            <section class="jumbotron text-center">
-                <div class="container">
-                    <h1 class="jumbotron-heading">Logged Out</h1>
-                    <p class="lead text-muted">Thank you for using our service. Hope to work with you again</p>
-                    <p>
-                        <a href="{% url 'login'%}" class="btn btn-primary my-2">Go to Log In Page</a>
-                    </p>
-                </div>
-            </section>
-            <div class="jumbotron">
-                <h1 class="display-1">{{ user.username }}</h1>
-            </div>
-
-            <div class="album py-5 bg-light">
-                <div class="container">
-                    <div class="row">
-
-                        {% for con in content.all %}
-
-                        <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{con.image.url}}" alt="" />
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text">{{con.text}}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {% endfor %}
-
-                    </div>
-                </div>
-            </div>
-
-        </main>
-
-        {% endblock %}
+{% endblock %}
