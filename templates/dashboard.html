@@ -642,6 +642,20 @@
     <!-- build:js -->
     <!-- <script src="{% static 'js/template.js' %}"></script> -->
     <script src="{% static 'js/dashboard.js' %}"></script>
+    {% load jsonify %}
+    <canvas id="myChart"></canvas>
+
+    </main>
+    </div>
+    </div>
+    <script src="{% static 'js/data.js' %}"></script>
+    <script type="text/javascript">
+        var json = JSON.parse('{{ json | safe }}');
+        console.log(json);
+        $(document).ready(function() {
+            make_chart(json);
+        });
+    </script>
     <!-- endbuild -->
 </body>
 
